@@ -86,3 +86,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+//Felhasznált képek forrása:
+/*
+tuya_temp.png: https://www.zigbee2mqtt.io/images/devices/IH-K009.png
+tuya_soil.png: https://www.zigbee2mqtt.io/images/devices/TS0601_soil.png
+giex_valve.png: https://www.zigbee2mqtt.io/images/devices/GX02.png
+
+Az alkalmazás ikonjának forrása: OpenAI DALL-E
+ */
