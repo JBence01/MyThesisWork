@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#1976D2" /> <!-- Sötétebb kék szín nyomva tartáskor -->
+            <corners android:radius="30dp"/>
+            <padding android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp" />
+            <stroke android:width="2dp" android:color="#0D47A1" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#2196F3" /> <!-- Alapértelmezett kék szín -->
+            <corners android:radius="30dp"/>
+            <padding android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp" />
+            <stroke android:width="2dp" android:color="#0D47A1" />
+        </shape>
+    </item>
+</selector>

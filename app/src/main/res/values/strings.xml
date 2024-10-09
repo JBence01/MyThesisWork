@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">aic</string>
-    <string name="buttonKorabbiText">Korábbi adatok 📈</string>
+    <string name="buttonKorabbiText">📈</string>
     <string name="TextHum">Páratartalom:</string>
     <string name="TextSoil">Talajnedvesség:</string>
     <string name="TextTemp">Hőmérséklet:</string>
     <string name="TextValve">Csap:</string>
     <string name="TextAkt">Aktuális adatok:</string>
     <string name="TextKorabbi">Korábbi adatok:</string>
-    <string name="buttonAktualisText">⬅️Aktuális adatok</string>
+    <string name="buttonAktualisText">⬅️</string>
     <string name="tuya_temp_sensor_pic">tuya temp sensor pic</string>
     <string name="soil_sensor_pic">Soil sensor pic</string>
     <string name="valve_pic">Valve pic</string>
+    <string name="soilCheckBoxText">Talajnedvesség</string>
+    <string name="tempCheckBoxText">Hőmérséklet</string>
+    <string name="humCheckBoxText">Páratartalom</string>
 </resources>
