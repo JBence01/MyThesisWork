@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +23,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView valueTemp, valueHum, valueSoil, valueValve;
+    private TextView valueTemp, valueHum, valueSoil;
     private DBkezelo DBkezelo;
     private SzenzorViewModel szenzorViewModel;
-    Button buttonTest;
     Button buttonKorabbi;
+    Switch switchValueValve;
+    String valveValue;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -42,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
         valueTemp = findViewById(R.id.valueTemp);
         valueHum = findViewById(R.id.valueHum);
         valueSoil = findViewById(R.id.valueSoil);
-        valueValve = findViewById(R.id.valueValve);
         buttonKorabbi = findViewById(R.id.buttonKorabbi);
-        buttonTest = findViewById(R.id.buttonTest);
+        switchValueValve = findViewById(R.id.switchValueValve);
 
         DBkezelo = new DBkezelo(this);
 
@@ -68,49 +70,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                insertTestData();
-            }
-        });
-
     }
 
     private void adatPrint(SzenzorAdat szenzorAdat) {
         valueTemp.setText(String.valueOf(szenzorAdat.getTemperature()) + " °C");
         valueHum.setText(String.valueOf(szenzorAdat.getHumidity())+ " %");
         valueSoil.setText(String.valueOf(szenzorAdat.getSoilMoisture())+ " %");
-        valueValve.setText(szenzorAdat.getValveState());
+        valveValue = szenzorAdat.getValveState();
+        if (valveValue.equals("nyitva")) {
+            switchValueValve.setChecked(true); // Bekapcsolt állapot
+        } else {
+            switchValueValve.setChecked(false); // Kikapcsolt állapot
+        }
     }
 
-    private void insertTestData() {
-        DBkezelo.adatBe(19.0, 55.0, 30.2, "Zárva");
-        DBkezelo.adatBe(23.4, 42.3, 30.6, "Zárva");
-        DBkezelo.adatBe(26.3, 35.7, 30.5, "Zárva");
-        DBkezelo.adatBe(27.0, 29.2, 31.5, "Zárva");
-        DBkezelo.adatBe(28.5, 29.0, 30.2, "Zárva");
-        DBkezelo.adatBe(28.0, 29.3, 27.6, "Zárva");
-        DBkezelo.adatBe(27.3, 33.7, 28.1, "Zárva");
-        DBkezelo.adatBe(26.7, 35.2, 27.5, "Zárva");
-        DBkezelo.adatBe(26.0, 37.1, 29.3, "Zárva");
-        DBkezelo.adatBe(24.4, 40.3, 30.5, "Zárva");
-        DBkezelo.adatBe(21.0, 54.2, 31.0, "Zárva");
-        DBkezelo.adatBe(20.2, 61.0, 32.5, "Zárva");
-        DBkezelo.adatBe(20.0, 62.2, 34.4, "Zárva");
-        DBkezelo.adatBe(18.3, 67.6, 40.5, "Zárva");
-        DBkezelo.adatBe(17.7, 72.2, 70.7, "Zárva");
-        DBkezelo.adatBe(17.2, 79.4, 83.5, "Zárva");
-        DBkezelo.adatBe(16.5, 82.7, 88.4, "Zárva");
-        DBkezelo.adatBe(16.1, 87.6, 84.9, "Zárva");
-        DBkezelo.adatBe(15.4, 82.7, 83.5, "Zárva");
-        DBkezelo.adatBe(15.1, 85.9, 84.3, "Zárva");
-        DBkezelo.adatBe(15.3, 87.8, 81.9, "Zárva");
-        DBkezelo.adatBe(15.8, 88.2, 78.7, "Zárva");
-        DBkezelo.adatBe(16.2, 84.6, 76.5, "Zárva");
-        DBkezelo.adatBe(17.4, 81.2, 77.1, "Zárva");
-
-        Toast.makeText(this, "Tesztadatok hozzáadva az adatbázishoz!", Toast.LENGTH_SHORT).show();
-    }
 
 }

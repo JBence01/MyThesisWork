@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Nyomva tartott állapot -->
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <solid android:color="#388E3C" />
+            <solid android:color="#1976D2" />
             <corners android:radius="30dp"/> <!-- Kerekített sarkok -->
-            <stroke android:width="2dp" android:color="#2E7D32" /> <!-- Szegélyszín -->
+            <stroke android:width="2dp" android:color="#0D47A1" /> <!-- Szegélyszín -->
         </shape>
     </item>
-
-    <!-- Normál állapot -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#4CAF50" />
+            <solid android:color="#2196F3" />
             <corners android:radius="30dp"/>
-            <stroke android:width="2dp" android:color="#2E7D32" />
+            <stroke android:width="2dp" android:color="#0D47A1" />
         </shape>
     </item>
 </selector>
