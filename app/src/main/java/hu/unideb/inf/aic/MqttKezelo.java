@@ -19,7 +19,7 @@ import org.json.JSONObject;
 public class MqttKezelo {
 
     private MqttAndroidClient mqttAndroidClient;
-    private final String brokerUrl = "mqtt://broker.hivemq.com:1883";
+    private final String brokerUrl = "CHANGE_ME"; // A broker URL-je
     private final String clientId = "AndroidClient";
 
     // A különböző topicok, amelyekre feliratkozik az alkalmazás

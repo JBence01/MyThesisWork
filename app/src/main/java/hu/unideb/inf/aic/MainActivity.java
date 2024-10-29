@@ -84,8 +84,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    }
 
-}
+
+
 //Felhasznált képek forrása:
 /*
 tuya_temp.png: https://www.zigbee2mqtt.io/images/devices/IH-K009.png
