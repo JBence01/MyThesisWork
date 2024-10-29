@@ -3,13 +3,13 @@ import json
 import paho.mqtt.client as mqtt
 
 #MQTT broker beállításai
-MQTT_BROKER = "localhost"
-MQTT_PORT = 1883
+MQTT_BROKER = "CHANGE_ME"
+MQTT_PORT = CHANGE_ME
 MQTT_TOPIC_TEMP_HUM = "zigbee2mqtt/Temp-Hum"  #Hőmérséklet és páratartalom szenzor
 MQTT_TOPIC_SOIL = "zigbee2mqtt/SoilS"         #Talajnedvesség szenzor
 MQTT_TOPIC_VALVE = "zigbee2mqtt/Valve/set"    #Okos csap
 
-#Öntözés indulásának feltételei (Change me)
+#Öntözés indulásának feltételei (Gyep)
 TEMPERATURE_MIN = 15
 TEMPERATURE_MAX = 28
 SOIL_MOISTURE_MIN = 50
